@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width"/>
 
-<title>私のマップアプリ1</title>
+<title>Startup Lab Lagoon</title>
 
 <link rel="apple-touch-icon" href="app-icon.png"/>
 <meta property="og:image" content="ogp-image.jpg"/>
@@ -15,10 +15,10 @@
 
 window.onload = function() {
 	var map = initMap('mapid')
-	map.setZoom(16)
+	map.setZoom(18)
 	map.panTo([ 26.33676, 127.800403 ]) // Startup lab Lagoon
 	
-	map.addIcon( 26.33676, 127.800403, "Startup lab Lagoon", "icon/lagoon.png", 32)
+	map.addIcon( 26.33676, 127.800403, "Startup lab Lagoon", "icon/lagoon.png", 48)
 	map.on("click", (e) => alert(e.latlng))
 }
 
@@ -31,7 +31,7 @@ h1 { font-size: 5vw; margin: 0; }
 
 </style></head><body>
 
-<h1>私のマップアプリ1</h1>
+<h1>Startup Lab Lagoon</h1>
 <div id="mapid"></div>
 
 <img id=qrcode><script>addEventListener("load", () => qrcode.src = "https://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
