@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
 <script src="https://fukuno.jig.jp/fukuno.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>"use strict"
 
 window.onload = function() {
@@ -25,6 +26,11 @@ window.onload = function() {
 	}, function() {
 		alert("現在位置に取得に失敗！")
 	})
+
+	url = `https://api.ottop.org/transit/stops?origin_latitude=26.33676&origin_longitude=127.800403&distance=1`;
+	$.getJSON(url, (data) => {
+		console.log(`id=${data.id}, latitude=${data.lat}, longitude=${data.lng}`);
+	});
 
 }
 
