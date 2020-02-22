@@ -52,18 +52,6 @@ window.onload = function() {
 		alert("現在位置に取得に失敗！")
 	})
 
-	var ll = current.getLatLng()
-	var dis = calcDistance(ll.lat, ll.lng, e.latlng.lat, e.latlng.lng)
-	if (dis > 0.002 * 2) {
-		alert("もうちょっと近付こう！")
-		return
-	}
-	if (!challenge(e)) {
-		alert("残念!")
-		return
-	}
-	alert("おめでとう！")
-	map.removeLayer(e.target)
 }
 
 </script>
