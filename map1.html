@@ -20,8 +20,6 @@ window.onload = function() {
 
 	var current = map.addIcon(0, 0, "現在地", "icon/lagoon.png", 64, 64)
 	navigator.geolocation.watchPosition(function(gpos) {
-		gpos.coords.latitude = 26.33676;
-		gpos.coords.longitude = 127.800403;
 		const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
 		current.setLatLng(pos)
 		map.panTo(pos)
