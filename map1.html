@@ -32,8 +32,7 @@ window.onload = function() {
 		$.getJSON(url, (data) => {
 			console.log('length: ' + data.length + ', ' + data);
 			const obj = JSON.parse(json);
-			console.log(obj.count);
-			console.log(obj.result);
+			console.log(obj.length);
 		});
 
 	}, function() {
