@@ -29,7 +29,7 @@ window.onload = function() {
 
 	var url = 'https://api.ottop.org/transit/stops?origin_latitude=26.33676&origin_longitude=127.800403&distance=1';
 	$.getJSON(url, (data) => {
-		console.log('id=${data.id}, latitude=${data.lat}, longitude=${data.lng}');
+		console.log('length: ' + data.length);
 	});
 
 }
