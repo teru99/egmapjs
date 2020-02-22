@@ -16,10 +16,6 @@
 window.onload = function() {
 	var map = initMap('mapid')
 	map.setZoom(18)
-	// map.panTo([ 26.33676, 127.800403 ]) // Startup lab Lagoon
-	
-	// map.addIcon( 26.33676, 127.800403, "Startup lab Lagoon", "icon/lagoon.png", 48)
-	// map.on("click", (e) => alert(e.latlng))
 
 	var current = map.addIcon(0, 0, "現在地", "icon/lagoon.png", 64, 64)
 	navigator.geolocation.watchPosition(function(gpos) {
@@ -45,7 +41,4 @@ h1 { font-size: 5vw; margin: 0; }
 <div id="mapid"></div>
 
 <img id=qrcode><script>addEventListener("load", () => qrcode.src = "https://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
-
-<a href=https://fukuno.jig.jp/2393>簡単地図アプリ egmapjs チュートリアル</a>
-
 </body></html>
