@@ -23,18 +23,17 @@ window.onload = function() {
 		const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
 		current.setLatLng(pos)
 		map.panTo(pos)
+		var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + gpos.coords.latitude + '&origin_longitude=' + gpos.coords.longitude + '&distance=1';
+		$.getJSON(url, (data) => {
+			console.log('length: ' + data.length + ', ' + data);
+			const obj = JSON.parse(json);
+			console.log(obj.count);
+			console.log(obj.result);
+		});
+
 	}, function() {
 		alert("現在位置に取得に失敗！")
 	})
-
-	var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + gpos.coords.latitude + '&origin_longitude=' + gpos.coords.longitude + '&distance=1';
-	$.getJSON(url, (data) => {
-		console.log('length: ' + data.length + ', ' + data);
-		const obj = JSON.parse(json);
-		console.log(obj.count);
-		console.log(obj.result);
-	});
-
 }
 
 </script>
