@@ -33,6 +33,10 @@ window.onload = function() {
 			console.log('length: ' + data.length + ', ' + data);
 			const obj = JSON.parse(json);
 			console.log(obj.length);
+			
+			for (let el of obj) {
+				console.log(el.name);
+      			}
 		});
 
 	}, function() {
