@@ -25,7 +25,9 @@ window.onload = function() {
 		current.setLatLng(pos)
 		map.panTo(pos)
 		console.log(gpos.coords.latitude)
+		console.log(Math.round(gpos.coords.latitude * base) / base)
 		console.log(gpos.coords.longitude)
+		console.log(Math.round(gpos.coords.longitude * base) / base)
 		var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + (Math.round(gpos.coords.latitude * base) / base) + '&origin_longitude=' + (Math.round(gpos.coords.longitude * base) / base) + '&distance=1';
 		$.getJSON(url, (data) => {
 			console.log('length: ' + data.length + ', ' + data);
