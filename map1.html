@@ -52,23 +52,18 @@ window.onload = function() {
 		alert("現在位置に取得に失敗！")
 	})
 
-	const onclick = function(e) {
-		var ll = current.getLatLng()
-		var dis = calcDistance(ll.lat, ll.lng, e.latlng.lat, e.latlng.lng)
-		if (dis > 0.002 * 2) {
-			alert("もうちょっと近付こう！")
-			return
-		}
-		if (!challenge(e)) {
-			alert("残念!")
-			return
-		}
-		alert("おめでとう！")
-		map.removeLayer(e.target)
-		map.addIcon(e.latlng.lat, e.latlng.lng, "checked!", "icon/firehydrant.png", 48, 48)
+	var ll = current.getLatLng()
+	var dis = calcDistance(ll.lat, ll.lng, e.latlng.lat, e.latlng.lng)
+	if (dis > 0.002 * 2) {
+		alert("もうちょっと近付こう！")
+		return
 	}
-	map.addIcon(lat, lng, onclick, "icon/firehydrant-d.png", 48, 48)
-
+	if (!challenge(e)) {
+		alert("残念!")
+		return
+	}
+	alert("おめでとう！")
+	map.removeLayer(e.target)
 }
 
 </script>
