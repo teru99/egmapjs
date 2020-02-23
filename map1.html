@@ -16,7 +16,7 @@
 
 window.onload = function() {
 	var map = initMap('mapid')
-	map.setZoom(16)
+	map.setZoom(14)
 
 	var current = map.addIcon(0, 0, "現在地", "icon/lagoon.png", 64, 64)
 	navigator.geolocation.watchPosition(function(gpos) {
@@ -35,7 +35,7 @@ window.onload = function() {
 			
 		for (let el of obj) {
 			console.log(el.name);
-			map.addIcon(el.lat, el.lng, el.name, "icon/busstop.png", 64, 64);
+			map.addIcon(el.lat, el.lng, el.name, "icon/busstop.png", 32);
       		}
 
 	}, function() {
