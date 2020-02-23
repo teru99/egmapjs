@@ -21,7 +21,8 @@ window.onload = function() {
 	var current = map.addIcon(0, 0, "現在地", "icon/lagoon.png", 64, 64)
 	navigator.geolocation.watchPosition(function(gpos) {
 		const base = 1000000
-		const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
+		// const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
+		const pos = [ 26.33676, 127.800403 ]
 		current.setLatLng(pos)
 		map.panTo(pos)
 		console.log(Math.round(gpos.coords.latitude * base) / base)
