@@ -28,294 +28,115 @@ window.onload = function() {
 		console.log(Math.round(gpos.coords.latitude * base) / base)
 		console.log(Math.round(gpos.coords.longitude * base) / base)
 		var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + (Math.round(gpos.coords.latitude * base) / base) + '&origin_longitude=' + (Math.round(gpos.coords.longitude * base) / base) + '&distance=1';
-		const data = '[
+		const data = '
+[
   {
     "id": "S2903",
     "lat": 26.330451,
     "lng": 127.795982,
-    "name": "園田",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S2903/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S2903/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "園田"
   },
   {
     "id": "S4851",
     "lat": 26.334099,
     "lng": 127.804453,
-    "name": "中部興産　沖縄市役所　前",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4851/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4851/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "中部興産　沖縄市役所　前"
   },
   {
     "id": "S4842",
     "lat": 26.336874,
     "lng": 127.795524,
-    "name": "クラウンホテル",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4842/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4842/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "クラウンホテル"
   },
   {
     "id": "S2989",
     "lat": 26.337617,
     "lng": 127.806564,
-    "name": "嘉間良",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S2989/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S2989/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "嘉間良"
   },
   {
     "id": "S3227",
     "lat": 26.336201,
     "lng": 127.800681,
-    "name": "胡屋",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S3227/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S3227/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "胡屋"
   },
   {
     "id": "S3912",
     "lat": 26.333218,
     "lng": 127.798748,
-    "name": "中の町",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S3912/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S3912/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "中の町"
   },
   {
     "id": "S4837",
     "lat": 26.337217,
     "lng": 127.799145,
-    "name": "一番街・サンシティ",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4837/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4837/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "一番街・サンシティ"
   },
   {
     "id": "S4846",
     "lat": 26.337497,
     "lng": 127.800481,
-    "name": "コザ信用金庫　胡屋支店　前",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4846/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4846/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "コザ信用金庫　胡屋支店　前"
   },
   {
     "id": "S2904",
     "lat": 26.330151,
     "lng": 127.795949,
-    "name": "園田",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S2904/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S2904/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "園田"
   },
   {
     "id": "S4845",
     "lat": 26.333193,
     "lng": 127.791383,
-    "name": "コザ運動公園",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4845/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4845/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "コザ運動公園"
   },
   {
     "id": "S2988",
     "lat": 26.337484,
     "lng": 127.807414,
-    "name": "嘉間良",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S2988/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S2988/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "嘉間良"
   },
   {
     "id": "S3226",
     "lat": 26.335701,
     "lng": 127.800598,
-    "name": "胡屋",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S3226/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S3226/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "胡屋"
   },
   {
     "id": "S4860",
     "lat": 26.335758,
     "lng": 127.799562,
-    "name": "ミュージックタウン",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4860/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4860/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "ミュージックタウン"
   },
   {
     "id": "S4840",
     "lat": 26.34363,
     "lng": 127.805562,
-    "name": "嘉間良2丁目",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4840/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4840/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "嘉間良2丁目"
   },
   {
     "id": "S4853",
     "lat": 26.341234,
     "lng": 127.80908,
-    "name": "仲松商事　前",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4853/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4853/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "仲松商事　前"
   },
   {
     "id": "S4830",
     "lat": 26.34091,
     "lng": 127.798783,
-    "name": "BCコザ　(市立図書館)",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4830/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4830/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "BCコザ　(市立図書館)"
   },
   {
     "id": "S4839",
     "lat": 26.343746,
     "lng": 127.799801,
-    "name": "沖縄市民会館",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S4839/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S4839/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "沖縄市民会館"
   },
   {
     "id": "S3911",
     "lat": 26.333634,
     "lng": 127.798715,
-    "name": "中の町",
-    "links": [
-      {
-        "href": "https://api.ottop.org/transit/stops/S3911/routes",
-        "rel": "routes"
-      },
-      {
-        "href": "https://api.ottop.org/transit/stops/S3911/timetable",
-        "rel": "timetable"
-      }
-    ]
+    "name": "中の町"
   }
 ]
 ';
