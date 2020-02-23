@@ -27,16 +27,14 @@ window.onload = function() {
 		console.log(Math.round(gpos.coords.latitude * base) / base)
 		console.log(Math.round(gpos.coords.longitude * base) / base)
 		var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + (Math.round(gpos.coords.latitude * base) / base) + '&origin_longitude=' + (Math.round(gpos.coords.longitude * base) / base) + '&distance=1';
-		// $.getJSON(url, (data) => {
-			var data = '[{"id": "S2903","lat": 26.330451,"lng": 127.795982,"name": "園田",}]'
-			console.log('length: ' + data.length + ', ' + data);
-			const obj = JSON.parse(json);
-			console.log(obj.length);
+		var data = '[{"id": "S2903","lat": 26.330451,"lng": 127.795982,"name": "園田",}]'
+		console.log('length: ' + data.length + ', ' + data);
+		const obj = JSON.parse(json);
+		console.log(obj.length);
 			
-			for (let el of obj) {
-				console.log(el.name);
-      			}
-		// });
+		for (let el of obj) {
+			console.log(el.name);
+      		}
 
 	}, function() {
 		alert("現在位置に取得に失敗！")
