@@ -27,7 +27,7 @@ window.onload = function() {
 		console.log(Math.round(gpos.coords.latitude * base) / base)
 		console.log(Math.round(gpos.coords.longitude * base) / base)
 		var url = 'https://api.ottop.org/transit/stops?origin_latitude=' + (Math.round(gpos.coords.latitude * base) / base) + '&origin_longitude=' + (Math.round(gpos.coords.longitude * base) / base) + '&distance=1';
-		const data = '[{"id": "S2903","lat": 26.330451,"lng": 127.795982,"name": "園田"}]'
+		const data = '[{"id": "S2903","lat": 26.330451,"lng": 127.795982,"name": "園田",}]'
 		console.log('length: ' + data.length + ', ' + data);
 		const obj = JSON.parse(data);
 		console.log(obj.length);
