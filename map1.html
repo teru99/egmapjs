@@ -16,13 +16,13 @@
 
 window.onload = function() {
 	var map = initMap('mapid')
-	map.setZoom(16)
+	map.setZoom(17)
 
 	var current = map.addIcon(0, 0, "現在地", "icon/lagoon.png", 64, 64)
 	navigator.geolocation.watchPosition(function(gpos) {
 		const base = 1000000
 		// const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
-		const pos = [ 26.33676, 127.800403 ]
+		const pos = [ 26.33676, 127.800403 ] // 開発用に現在地をデフォルト(Lagoon)に設定する。
 		current.setLatLng(pos)
 		map.panTo(pos)
 		console.log(Math.round(gpos.coords.latitude * base) / base)
