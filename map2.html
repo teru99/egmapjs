@@ -19,11 +19,16 @@ window.onload = function() {
 
 </script>
 <style>
-
 body { margin: 0; font-family: sans-serif; text-align: center; }
 h1 { font-size: 5vw; margin: 0; }
 #mapid { position:absolute;top:0;left:0;right:0;bottom:0; }
-
+.leaflet-tile-container { /* 地図の色味変更 CSS3 filter */
+    x-filter: sepia(100%) brightness(95%); /* セピア */
+    x-filter: grayscale(100%) brightness(110%); /* 明るめグレースケール */
+    filter: hue-rotate(-10deg) saturate(70%) brightness(104%); /* いい感じの色？ */
+}
+.leaflet-marker-pane > a { word-break: break-all; }
+a { color: #444 !important; }
 </style></head><body>
 <div id="mapid"></div>
 </body></html>
