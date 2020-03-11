@@ -5,15 +5,73 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
 <script>"use strict"
+var initMap = function(mapid) {
+	var map = L.map(mapid)
+
+	L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", {
+		attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>"',
+		maxZoom: 18,
+	}).addTo(map);
+
+	// アイコン
+	map.iconlayer = L.layerGroup()
+	map.iconlayer.addTo(map)
+	map.addIcon = function(lat, lng, nameorparam, iconurl, iconwidth, iconheight) {
+		var name = null
+		if (typeof nameorparam == "string") {
+			name = nameorparam
+		} else if (nameorparam.name) {
+			name = nameorparam.name
+		}
+		var marker = null
+		if (iconurl) {
+			if (!iconwidth) {
+				iconwidth = 32
+			}
+			if (!iconheight) {
+				iconheight = iconwidth
+			}
+			var icon = L.icon({
+				iconUrl: iconurl,
+				iconSize: [ iconwidth, iconheight ],
+				iconAnchor: [ iconwidth / 2, iconheight / 2 ]
+			})
+			marker = L.marker([ lat, lng ], {
+				title : name,
+				icon : icon,
+			})
+		} else {
+			marker = L.marker([ lat, lng ], { title: name })
+		}
+		if (typeof nameorparam == "function") {
+			marker.on("click", function(e) {
+				nameorparam(e, name)
+			});
+		} else {
+			marker.bindPopup(
+				"<h2>" + name + "</h2>",
+				{
+					maxWidth: 500
+				}
+			);
+			marker.on("click", function(e) {
+				if (nameorparam && nameorparam.callback)
+					nameorparam.callback(e, name)
+			});
+		}
+		this.iconlayer.addLayer(marker);
+		return marker
+	}
+	return map
+}
 
 window.onload = function() {
 	var map = initMap('mapid')
 	map.setZoom(17)
 	const pos = [ 26.33676, 127.800403 ] // 開発用に現在地をデフォルト(Lagoon)に設定する。
 	map.panTo(pos)
-	map.addIcon(26.33676, 127.800403, "現在地9", "icon/lagoon.png", 64, 64)
+	map.addIcon(26.33676, 127.800403, "現在地10", "icon/lagoon.png", 64, 64)
 }
 
 </script>
